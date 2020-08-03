@@ -30,7 +30,8 @@ async def setup_learner():
     data_bunch = ImageDataBunch.single_from_classes(path, classes,
         ds_tfms=get_transforms(), size=512).normalize(imagenet_stats)
     learn = cnn_learner(data_bunch, models.resnet34, pretrained=False)
-    learn.load(model_file_name)
+    # learn.load(model_file_name)
+    learn = load_learner(path/'models'/f'{model_file_name}.pkl')
     return learn
 
 loop = asyncio.get_event_loop()
