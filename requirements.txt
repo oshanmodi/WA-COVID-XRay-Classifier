@@ -7,3 +7,5 @@ python-multipart
 aiofiles
 aiohttp
 Pillow<=6.2.2
+torchvision=0.5.0
+pytorch=1.4.0
